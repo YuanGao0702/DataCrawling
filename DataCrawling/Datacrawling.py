@@ -50,6 +50,7 @@ for a in html.select('a'):
 		result.append(a.text);
 	if a.text == 'Python Try...Except':
 		break
-
+		
+print('Python Tag')
 for tag in result:
 	print(tag)
