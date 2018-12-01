@@ -78,5 +78,18 @@ def sel2(str):
 	element = driver.find_element(By.XPATH,'//span[@class="tlid-translation translation"]') 
 	element2 = driver.find_elements(By.XPATH,'//div[@class="tlid-transliteration-content transliteration-content full"]')
 	print (element.text)  
- 
-sel2(sys.argv[1])
+
+def sel3():
+	options = se.webdriver.ChromeOptions()
+	options.add_argument('headless') 
+	driver = se.webdriver.Chrome(chrome_options=options)
+	url = 'https://github.com/YuanGao0702?tab=repositories'
+	print(url)
+	driver.get(url)
+	elements = driver.find_elements(By.XPATH,'//a[@itemprop="name codeRepository"]') 
+	print("total repositories: " + str(len(elements)))
+	for e in elements:
+		print (e.text) 
+
+#sel2(sys.argv[1])
+sel3()
